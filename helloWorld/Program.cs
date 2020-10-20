@@ -31,6 +31,7 @@ namespace helloWorld
             Thread.Sleep(1000);
             Console.Clear();
             Console.WriteLine("Anyway, welcome to theVault! I hope you enjoy all the programs here!");
+            Console.WriteLine("All Vault programs Copyright NinjaCheetah 2020");
             Thread.Sleep(2000);
             Console.WriteLine("(Press any key to exit)");
             Console.ReadKey();

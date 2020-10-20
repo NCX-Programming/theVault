@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HyxcHPUaXHqVlwh/VbqndW8nZ9zuyA5Dulw+rXkuHL6lKc1Qi9hYD3VneX/btVi1g2dpGSAXRU05n9S4LWPCtg==",
+  "dgSpecHash": "I2fpHePw8wRZQrNhMsHC8rV2KBEAYnj7ndODR09akFVoHapRzddJZshrQ4QOv9onrNY8FBD62R/zzAEi4nT8Ug==",
   "success": true,
-  "projectFilePath": "/home/campbell/dotNET/theVault/helloWorld/helloWorld.csproj",
+  "projectFilePath": "C:\\Users\\Campbell Bagley\\Documents\\GitHub\\theVault\\helloWorld\\helloWorld.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
