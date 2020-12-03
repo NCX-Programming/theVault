@@ -12,17 +12,21 @@ namespace graphicStuff
             Console.Clear();
             // Draw main screen
             Console.ResetColor();
-            Console.WriteLine("==============================");
-            Console.WriteLine("|      'Graphics' Test       |");
-            Console.WriteLine("|          theVault          |");
-            Console.WriteLine("|                            |");
+            Console.WriteLine("===============================");
+            Console.WriteLine("|       'Graphics' Test       |");
+            Console.WriteLine("|           theVault          |");
+            Console.WriteLine("|                             |");
+            // White highlighted section
+            Console.Write("|  ");
             Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black; 
-            Console.WriteLine("|  Press any key to continue |");
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Write("Press any key to continue");
             Console.ResetColor();
-            Console.WriteLine("|                            |");
-            Console.WriteLine("|     © NinjaCheetah 2020    |");
-            Console.WriteLine("==============================");   
+            Console.WriteLine("  |");
+            Console.ResetColor();
+            Console.WriteLine("|                             |");
+            Console.WriteLine("|     © NinjaCheetah 2020     |");
+            Console.WriteLine("===============================");   
             Console.ReadKey();
             Menu();
         }
@@ -68,6 +72,7 @@ namespace graphicStuff
         }
 
         public static void About() {
+            // Draw about screen
             Console.Clear();
             Console.WriteLine("==============================");
             Console.WriteLine("|      'Graphics' Test       |");
@@ -80,6 +85,7 @@ namespace graphicStuff
             Console.WriteLine("|   see Legal for more info  |");
             Console.WriteLine("==============================");
             Console.WriteLine("1. Legal    2. Menu");
+            // Read menu selection
             menuSelection = Convert.ToInt32(Console.ReadLine());
             switch (menuSelection) {
                 case 1:
