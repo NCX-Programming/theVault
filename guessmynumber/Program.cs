@@ -18,21 +18,26 @@ namespace guessmynumber
             Console.WriteLine("Press any key to begin.");
             Console.ReadKey();
             Console.Clear();
+            // Main Menu
             Console.WriteLine("Main Menu");
             Console.WriteLine("Select an option by typing the number and pressing enter.");
             Console.WriteLine("1. Play     2. Set Max Number");
             playAgain = Console.ReadLine();
+            // Start
             if (playAgain == "1") {
                 maxNumber = 100;
                 PlayGame();
                 playAgain = "";
             }
+            // Set max number, then start
             else if (playAgain == "2") {
+                // Wait for a valid number, must be larger than 1
                 while (maxNumber <= 1) {
                     Console.Clear();
                     Console.WriteLine("Enter the max number, must be positive, larger than 1, and an integer:");
                     maxNumber = Convert.ToInt32(Console.ReadLine());
                 }
+                // Output newly set max number and start game
                 Console.Clear();
                 Console.WriteLine("Max number set to " + maxNumber);
                 Thread.Sleep(1500);
@@ -43,9 +48,7 @@ namespace guessmynumber
 
         public class RandomGenerator  
         {  
-            // Instantiate random number generator.  
-            // It is better to keep a single Random instance 
-            // and keep using Next on the same instance.  
+            // Create random instance
             private readonly Random _random = new Random();  
   
             // Generates a random number within a range.      
@@ -59,7 +62,6 @@ namespace guessmynumber
             // Generates a random integer between 1 and 100
             var generator = new RandomGenerator();  
             randomNumber = generator.RandomNumber(1, maxNumber);
-
             // Start the game
             Console.Clear();
             Console.WriteLine("I'm thinking of a number between 1 and " + maxNumber);
