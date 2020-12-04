@@ -133,32 +133,22 @@ namespace graphicStuff
             Thread.Sleep(1500);
             // Draw example 1
             Console.Clear();
-            Console.WriteLine(" *CCCCCCC*CCCCCCCCCCCCCCCCCCCCCCCCCCCC*");
-            Console.WriteLine(" B       B                            B");
-            Console.WriteLine(" B  (1)  B   Example item 1           B");
-            Console.WriteLine(" B       B                            B");
-            Console.WriteLine(" B  (2)  B   Example item 2           B");
-            Console.WriteLine(" B       B                            B");
-            Console.WriteLine(" B  (3)  B   Example item 3           B");
-            Console.WriteLine(" B       B                            B");
-            Console.WriteLine(" B  (4)  B   Example item 4           B");
-            Console.WriteLine(" B       B                            B");
-            Console.WriteLine(" B  (5)  B   Example item 5           B");
-            Console.WriteLine(" B       B                            B");
-            Console.WriteLine(" B  (6)  B   Example item 6           B");
-            Console.WriteLine(" B       B                            B");
-            Console.WriteLine(" B  (7)  B   Example item 7           B");
-            Console.WriteLine(" B       B                            B");
-            Console.WriteLine(" B       B                            B");
-            Console.WriteLine(" B       B                            B");
-            Console.WriteLine(" *CCCCCCC*CCCCCCCCCCCCCCCCCCCCCCCCCCCC*");
+            Console.WriteLine(" *====================================*");
+            Console.WriteLine(" |            Message Box             |");
+            Console.WriteLine(" *====================================*");
+            Console.WriteLine(" |                                    |");
+            Console.WriteLine(" |         I'm a message box!         |");
+            Console.WriteLine(" |                                    |");
+            Console.WriteLine(" |                                    |");
+            Console.WriteLine(" | 1. Ok                    2. Cancel |");
+            Console.WriteLine(" *====================================*");
             // Wait briefly, and then prompt to continue
             Thread.Sleep(1500);
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
             // Introduce example 2
             Console.Clear();
-            Console.WriteLine("Example 2, based off of Example 1");
+            Console.WriteLine("Example 2");
             Thread.Sleep(1500);
             // Draw example 2
             Console.Clear();
