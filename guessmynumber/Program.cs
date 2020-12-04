@@ -65,7 +65,7 @@ namespace guessmynumber
             // Start the game
             Console.Clear();
             Console.WriteLine("I'm thinking of a number between 1 and " + maxNumber);
-            Console.WriteLine("Enter your guess:");
+            Console.Write("Enter your guess: ");
             guess = Convert.ToInt32(Console.ReadLine());
             CheckAnswer();
         }
@@ -105,7 +105,7 @@ namespace guessmynumber
         {
             // Repeating guessing code
             Console.Clear();
-            Console.WriteLine("Enter your guess:");
+            Console.Write("Enter your guess: ");
             guess = Convert.ToInt32(Console.ReadLine());
             CheckAnswer();
         }

@@ -23,6 +23,7 @@ namespace graphicStuff
             Console.Write("Press any key to continue");
             Console.ResetColor();
             Console.WriteLine("  |");
+            // End of white highlighted section
             Console.ResetColor();
             Console.WriteLine("|                             |");
             Console.WriteLine("|     © NinjaCheetah 2020     |");
@@ -32,15 +33,17 @@ namespace graphicStuff
         }
 
         public static void Menu() {
-            Console.Clear();
+            // Set key thing to make it easier to read key input (idk it's from ms docs)
+            ConsoleKeyInfo cki;
             // Draw example selection menu
+            Console.Clear();
             Console.WriteLine("============================================================");
             Console.WriteLine("| Choose an example to try:                                |");
             Console.WriteLine("|                                                          |");
             Console.WriteLine("|                                                          |");
             Console.WriteLine("| 1. Color Test                                            |");
             Console.WriteLine("|                                                          |");
-            Console.WriteLine("| 2. Menu Style Test (WIP)                                 |");
+            Console.WriteLine("| 2. Menu Style Test (WIP, but functional)                 |");
             Console.WriteLine("|                                                          |");
             Console.WriteLine("| 3. Misc Things I tried to 'draw' (WIP)                   |");
             Console.WriteLine("|                                                          |");
@@ -49,26 +52,16 @@ namespace graphicStuff
             Console.WriteLine("| 5. Exit                                                  |");
             Console.WriteLine("|                                                          |");
             Console.WriteLine("============================================================");
-            // Read selection
-            menuSelection = Convert.ToInt32(Console.ReadLine());
-            switch (menuSelection) {
-                case 1:
-                    Colors();
-                    break;
-                case 2:
-                    Menu();
-                    break;
-                case 3:
-                    Menu();
-                    break;
-                case 4:
-                    About();
-                    break;
-                case 5:
-                    Console.Clear();
-                    Environment.Exit(0);
-                    break;
-            }
+            // Read selection, now with effeciency:tm: (but not with spelling aparently)
+            do
+            {
+                cki = Console.ReadKey();
+                if(cki.Key == ConsoleKey.D1) Colors();
+                if(cki.Key == ConsoleKey.D2) MenuTests();
+                if(cki.Key == ConsoleKey.D3) Menu();
+                if(cki.Key == ConsoleKey.D4) About();
+                if(cki.Key == ConsoleKey.D5){Console.Clear(); Environment.Exit(0);}
+            } while (cki.Key != ConsoleKey.Escape);
         }
 
         public static void About() {
@@ -106,7 +99,7 @@ namespace graphicStuff
             Console.Clear();
             // Get list of all available colors
             ConsoleColor[] consoleColors = (ConsoleColor[])ConsoleColor .GetValues(typeof(ConsoleColor));
-            // Send each available color
+            // Send each available background color
             Console.WriteLine("Background colors:");
             Console.ForegroundColor = ConsoleColor.Black;
             foreach(var color in consoleColors) {
@@ -118,6 +111,7 @@ namespace graphicStuff
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
             Console.Clear();
+            // Send every available foreground color
             Console.WriteLine("Foreground (text) colors:");
             Console.BackgroundColor = ConsoleColor.Black;
             foreach(var color in consoleColors) {
@@ -126,7 +120,41 @@ namespace graphicStuff
             }
             Thread.Sleep(1500);
             Console.ResetColor();
+            // Prompt for return to menu
             Console.WriteLine("Press any key to return to the menu");
+            Console.ReadKey();
+            Menu();
+        }
+
+        public static void MenuTests() {
+            // Introduce example 1
+            Console.Clear();
+            Console.WriteLine("Example 1");
+            Thread.Sleep(1500);
+            // Draw example 1
+            Console.Clear();
+            Console.WriteLine(" *CCCCCCC*CCCCCCCCCCCCCCCCCCCCCCCCCCCC*");
+            Console.WriteLine(" B       B                            B");
+            Console.WriteLine(" B  (1)  B   Example item 1           B");
+            Console.WriteLine(" B       B                            B");
+            Console.WriteLine(" B  (2)  B   Example item 2           B");
+            Console.WriteLine(" B       B                            B");
+            Console.WriteLine(" B  (3)  B   Example item 3           B");
+            Console.WriteLine(" B       B                            B");
+            Console.WriteLine(" B  (4)  B   Example item 4           B");
+            Console.WriteLine(" B       B                            B");
+            Console.WriteLine(" B  (5)  B   Example item 5           B");
+            Console.WriteLine(" B       B                            B");
+            Console.WriteLine(" B  (6)  B   Example item 6           B");
+            Console.WriteLine(" B       B                            B");
+            Console.WriteLine(" B  (7)  B   Example item 7           B");
+            Console.WriteLine(" B       B                            B");
+            Console.WriteLine(" B       B                            B");
+            Console.WriteLine(" B       B                            B");
+            Console.WriteLine(" *CCCCCCC*CCCCCCCCCCCCCCCCCCCCCCCCCCCC*");
+            // Wait briefly, and then prompt to continue
+            Thread.Sleep(1500);
+            Console.WriteLine("Press any key to continue");
             Console.ReadKey();
             Menu();
         }
