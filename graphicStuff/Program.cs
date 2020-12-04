@@ -156,6 +156,35 @@ namespace graphicStuff
             Thread.Sleep(1500);
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
+            // Introduce example 2
+            Console.Clear();
+            Console.WriteLine("Example 2, based off of Example 1");
+            Thread.Sleep(1500);
+            // Draw example 2
+            Console.Clear();
+            Console.WriteLine(" *====================================*");
+            Console.WriteLine(" | Example Title                      |");
+            Console.WriteLine(" *=======*============================*");
+            Console.WriteLine(" |       |                            |");
+            Console.WriteLine(" |  (1)  |   Example Item 1           |");
+            Console.WriteLine(" |       |                            |");
+            Console.WriteLine(" |  (2)  |   Example Item 2           |");
+            Console.WriteLine(" |       |                            |");
+            Console.WriteLine(" |  (3)  |   Example Item 3           |");
+            Console.WriteLine(" |       |                            |");
+            Console.WriteLine(" |  (4)  |   Example Item 4           |");
+            Console.WriteLine(" |       |                            |");
+            Console.WriteLine(" |  (5)  |   Example Item 5           |");
+            Console.WriteLine(" |       |                            |");
+            Console.WriteLine(" |  (6)  |   Example Item 6           |");
+            Console.WriteLine(" |       |                            |");
+            Console.WriteLine(" |  (7)  |   Example Item 7           |");
+            Console.WriteLine(" |       |                            |");
+            Console.WriteLine(" *=======*============================*");
+            // Wait briefly, and then prompt to continue
+            Thread.Sleep(1500);
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
             Menu();
         }
     }
