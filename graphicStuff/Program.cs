@@ -129,7 +129,7 @@ namespace graphicStuff
         public static void MenuTests() {
             // Introduce example 1
             Console.Clear();
-            Console.WriteLine("Example 1");
+            Console.WriteLine("Example 1, a message box");
             Thread.Sleep(1500);
             // Draw example 1
             Console.Clear();
@@ -148,7 +148,7 @@ namespace graphicStuff
             Console.ReadKey();
             // Introduce example 2
             Console.Clear();
-            Console.WriteLine("Example 2");
+            Console.WriteLine("Example 2, a selection menu");
             Thread.Sleep(1500);
             // Draw example 2
             Console.Clear();
