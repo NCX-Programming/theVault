@@ -140,7 +140,7 @@ namespace graphicStuff
             Console.WriteLine(" |         I'm a message box!         |");
             Console.WriteLine(" |                                    |");
             Console.WriteLine(" |                                    |");
-            Console.WriteLine(" | 1. Ok                    2. Cancel |");
+            Console.WriteLine(" |  1. Ok                  2. Cancel  |");
             Console.WriteLine(" *====================================*");
             // Wait briefly, and then prompt to continue
             Thread.Sleep(1500);
