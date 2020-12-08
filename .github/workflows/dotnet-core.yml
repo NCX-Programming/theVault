@@ -23,3 +23,14 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+    - name: Pack Build Files
+      run: |
+        mkdir ~/buildfiles
+        mv helloWorld/bin/Release/netcoreapp5.0/* ~/buildfiles
+        mv graphicStuff/bin/Release/netcoreapp5.0/* ~/buildfiles
+        mv guessmynumber/bin/Release/netcoreapp5.0/* ~/buildfiles
+    - name: Publish Build Files
+      uses: actions/upload-artifact@v2
+      with:
+        path: ~/buildfiles/*
+        name: buildfiles
