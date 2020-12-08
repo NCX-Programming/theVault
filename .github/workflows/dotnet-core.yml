@@ -26,9 +26,12 @@ jobs:
     - name: Pack Build Files
       run: |
         mkdir ~/buildfiles
-        mv helloWorld/bin/Release/netcoreapp5.0/* ~/buildfiles
-        mv graphicStuff/bin/Release/netcoreapp5.0/* ~/buildfiles
-        mv guessmynumber/bin/Release/netcoreapp5.0/* ~/buildfiles
+        mkdir ~/buildfiles/helloWorld
+        mv helloWorld/bin/Release/netcoreapp5.0/* ~/buildfiles/helloWorld
+        mkdir ~/buildfiles/graphicStuff
+        mv graphicStuff/bin/Release/netcoreapp5.0/* ~/buildfiles/graphicStuff
+        mkdir ~/buildfiles/guessmynumber
+        mv guessmynumber/bin/Release/netcoreapp5.0/* ~/buildfiles/guessmynumber
     - name: Publish Build Files
       uses: actions/upload-artifact@v2
       with:
