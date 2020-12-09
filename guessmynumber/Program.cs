@@ -12,6 +12,8 @@ namespace guessmynumber
 
         static void Main(string[] args)
         {
+            // Set ConsoleKey stuff
+            ConsoleKeyInfo cki;
             // Program Start
             Console.Clear();
             Console.WriteLine("Welcome to Guess My Number! (theVault Edition)");
@@ -22,28 +24,31 @@ namespace guessmynumber
             Console.WriteLine("Main Menu");
             Console.WriteLine("Select an option by typing the number and pressing enter.");
             Console.WriteLine("1. Play     2. Set Max Number");
-            playAgain = Console.ReadLine();
-            // Start
-            if (playAgain == "1") {
-                maxNumber = 100;
-                PlayGame();
-                playAgain = "";
-            }
-            // Set max number, then start
-            else if (playAgain == "2") {
-                // Wait for a valid number, must be larger than 1
-                while (maxNumber <= 1) {
+            // Read key pressed, using this instead of ReadLine() for speeeeeeeeeeeeeed:tm:
+            do
+            {
+                cki = Console.ReadKey();
+                // Play game without setting custom max number (Defaults to 100)
+                if(cki.Key == ConsoleKey.D1) {
+                    maxNumber = 100;
+                    PlayGame();
+                }
+                // Set custom max number, then start (maybe i should add a limit here because people will go crazy with it)
+                if(cki.Key == ConsoleKey.D2) {
+                    // Wait for a valid number, must be larger than 1
+                    while (maxNumber <= 1) {
                     Console.Clear();
                     Console.WriteLine("Enter the max number, must be positive, larger than 1, and an integer:");
                     maxNumber = Convert.ToInt32(Console.ReadLine());
+                    // Output newly set max number and start game
+                    Console.Clear();
+                    Console.WriteLine("Max number set to " + maxNumber);
+                    Thread.Sleep(1500);
+                    PlayGame();
+                    }
                 }
-                // Output newly set max number and start game
-                Console.Clear();
-                Console.WriteLine("Max number set to " + maxNumber);
-                Thread.Sleep(1500);
-                PlayGame();
-                playAgain = "";
-            }
+                if(cki.Key == ConsoleKey.Escape){Console.Clear(); Environment.Exit(0);}
+            } while (cki.Key != ConsoleKey.Escape);
         }
 
         public class RandomGenerator  
@@ -72,18 +77,19 @@ namespace guessmynumber
 
         public static void CheckAnswer() 
         {
+            // Set ConsoleKey stuff
+            ConsoleKeyInfo cki;
             // Correct answer
             if (randomNumber == guess) {
                 Console.Clear();
                 Console.WriteLine("Congratulations! You guessed the right number!");
                 Console.WriteLine("Play again? y/n");
-                playAgain = Console.ReadLine();
-                if (playAgain == "y") {
-                    PlayGame();
-                }
-                else {
-                    Environment.Exit(0);
-                }
+                do
+                {
+                    cki = Console.ReadKey();
+                    if(cki.Key == ConsoleKey.Y) PlayGame();
+                    if(cki.Key == ConsoleKey.N) {Console.Clear(); Environment.Exit(0);}
+                } while (cki.Key != ConsoleKey.Escape);
             }
             // Answer too large
             else if (randomNumber < guess) {
