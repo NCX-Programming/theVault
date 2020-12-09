@@ -1,0 +1,39 @@
+name: .NET Core
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.101
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+    - name: Test
+      run: dotnet test --no-restore --verbosity normal
+    - name: Pack Build Files
+      run: |
+        mkdir ~/buildfiles
+        mkdir ~/buildfiles/helloWorld
+        mv helloWorld/bin/Release/netcoreapp5.0/* ~/buildfiles/helloWorld
+        mkdir ~/buildfiles/graphicStuff
+        mv graphicStuff/bin/Release/netcoreapp5.0/* ~/buildfiles/graphicStuff
+        mkdir ~/buildfiles/guessmynumber
+        mv guessmynumber/bin/Release/netcoreapp5.0/* ~/buildfiles/guessmynumber
+    - name: Publish Build Files
+      uses: actions/upload-artifact@v2
+      with:
+        path: ~/buildfiles/*
+        name: buildfiles
