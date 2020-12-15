@@ -99,7 +99,7 @@ namespace graphicStuff
             Console.Clear();
             // Get list of all available colors
             ConsoleColor[] consoleColors = (ConsoleColor[])ConsoleColor .GetValues(typeof(ConsoleColor));
-            // Send each available background color
+            // Send each available background color, with the color name
             Console.WriteLine("Background colors:");
             Console.ForegroundColor = ConsoleColor.Black;
             foreach(var color in consoleColors) {
@@ -111,7 +111,7 @@ namespace graphicStuff
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
             Console.Clear();
-            // Send every available foreground color
+            // Send every available foreground color, with the color name
             Console.WriteLine("Foreground (text) colors:");
             Console.BackgroundColor = ConsoleColor.Black;
             foreach(var color in consoleColors) {
