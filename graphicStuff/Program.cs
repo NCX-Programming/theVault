@@ -120,7 +120,7 @@ namespace graphicStuff
             }
             Thread.Sleep(1500);
             Console.ResetColor();
-            // Prompt for return to menu
+            // Prompt to return to menu
             Console.WriteLine("Press any key to return to the menu");
             Console.ReadKey();
             Menu();
