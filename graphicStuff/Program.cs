@@ -127,7 +127,7 @@ namespace graphicStuff
         }
 
         public static void MenuTests() {
-            // Introduce example 1
+            // Explain example 1
             Console.Clear();
             Console.WriteLine("Example 1, a message box");
             Thread.Sleep(1500);
@@ -146,7 +146,7 @@ namespace graphicStuff
             Thread.Sleep(1500);
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
-            // Introduce example 2
+            // Explain example 2
             Console.Clear();
             Console.WriteLine("Example 2, a selection menu");
             Thread.Sleep(1500);
