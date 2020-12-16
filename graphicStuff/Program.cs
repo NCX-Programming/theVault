@@ -16,7 +16,7 @@ namespace graphicStuff
             Console.WriteLine("|       'Graphics' Test       |");
             Console.WriteLine("|           theVault          |");
             Console.WriteLine("|                             |");
-            // White highlighted section
+            // Start of white highlighted section
             Console.Write("|  ");
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Black;
