@@ -1,9 +1,10 @@
+## This repository has been archived because this project has been replaced by ![theVaultC](https://github.com/NCX-Programming/theVaultC)
 # theVault
 ### The greatest jumble of cross-platform C# shenanigans around.
 And yes, cross platform. All projects contained in theVault are guarenteed to work on x64 Windows and Linux (and possbily macOS but I don't have a way to test that.)
 ## Compiling and Running
 Since theVault doesn't have releases, you'll need to compile the programs youself. Don't worry, it's easy!
-
+m
 ### Before starting, make sure you have latest version of the .NET Core **SDK** installed!
 Not the runtime, because you need the SDK to compile the apps. All Vault apps require .NET 5.0.
 
